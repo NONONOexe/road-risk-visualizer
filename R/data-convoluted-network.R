@@ -32,7 +32,7 @@ road_network <- create_road_network(roads) |>
 segmented_network <- road_network |>
   create_segmented_network(segment_length = 10)
 
-# 畳み込み（非常に時間がかかります）
+# 畳み込み
 convoluted_network <- segmented_network |>
   convolute_segmented_network(bandwidth = 100)
 saveRDS(convoluted_network, "data/convoluted_network.rds")
